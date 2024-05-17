@@ -3,6 +3,13 @@ info:
   title: User Signup Event Definition Using AVRO Schema File
   version: 1.0.0
   description: An Event that notifies whenever a new user signs up.
+  tags:
+    - name: DomainXPTO
+      description: Business domain
+    - name: ResourceABC
+      description: Resource abc
+    - name: Event
+      description: Element Type
 components:
   messages:
     userSignedUp:
