@@ -1,0 +1,31 @@
+asyncapi: 3.0.0
+info:
+  title: User Signup Event Deployment Specification
+  version: 1.0.0
+  description: Deployment Specification for UserSignedUp Event
+servers:
+  kafkaServer:
+    host: localhost:9092
+    description: Kafka Server
+    protocol: kafka
+components:
+  messages:
+    $ref: 'https://raw.githubusercontent.com/sakanof/sandbox-asyncapi/v2.0.0/.github/src/definition.yml#/components/messages'
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: mydomain.user_signed_up.v1
+    messages:
+      userSignedUp:
+        $ref: 'https://raw.githubusercontent.com/sakanof/sandbox-asyncapi/v2.0.0/.github/src/definition.yml#/components/messages/userSignedUp'
+#    bindings:
+#      kafka:
+#        bindingVersion: '0.5.0'
+#        partitions: 10
+#        replicas: 2
+#        topicConfiguration:
+#          cleanup.policy: ["delete", "compact"]
+#          retention.ms: 604800000
+#          retention.bytes: 1000000000
+#          delete.retention.ms: 86400000
+#          max.message.bytes: 1048588
